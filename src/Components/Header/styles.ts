@@ -5,18 +5,45 @@ import Constants from 'expo-constants';
 
 import colors from '../../styles/colors';
 
-// Verify if the operation system is the android
-
-const statusBarHeight = Platform.OS === 'android' ? Constants.statusBarHeight : 0;
-
-export const Wrapper = styled.SafeAreaView`
-    background: ${colors.primary};
-    flex: 1;
-    padding-top: ${statusBarHeight + 'px'};
-`;
-
 export const Container = styled.View`
-    padding-left: 14px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 14px;
+    padding-right: 14px;
 `;
 
-export const Main = styled.View``;
+// tag ( grey )
+// React Native doesnt have border-radius 50%, so u have to use half of the width and heigth size
+export const Avatar = styled.TouchableOpacity`
+    background-color: ${colors.tag};
+
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+`;
+
+export const OnlineStatus = styled.View`
+    background-color: ${colors.green};
+
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    border: 2px solid ${colors.primary};
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+`;
+
+export const RightSide = styled.View`
+    flex-direction: row;
+    align-items: center;
+`;
+
+// TouchableOpacity is the "click" animation
+export const Button = styled.TouchableOpacity`
+margin-left: 20px;
+`;

@@ -1,16 +1,40 @@
 import React from 'react';
-import { Text } from 'react-native';
+import colors from '../../styles/colors';
+import { MaterialIcons, MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 
-import { Container, Wrapper, Main } from './styles';
+import { Container, Avatar, OnlineStatus, RightSide, Button } from './styles';
 
-const Following: React.FC = () => {
+const Header: React.FC = () => {
     return (
-        <Wrapper>
-            <Container>
-                <Main/>
-            </Container>
-        </Wrapper>
+        <Container>
+            <Avatar>
+                <OnlineStatus />
+            </Avatar>
+            <RightSide>
+                <Button>
+                    <MaterialIcons
+                        name="notifications-none"
+                        size={26}
+                        color={colors.black}
+                    />
+                </Button>
+                <Button>
+                    <MaterialCommunityIcons
+                        name="message-outline"
+                        size={26}
+                        color={colors.black}
+                    />
+                </Button>
+                <Button>
+                    <Feather
+                        name="search"
+                        size={26}
+                        color={colors.black}
+                    />
+                </Button>
+            </RightSide>
+        </Container>
     );
 };
 
-export default Following;
+export default Header;
